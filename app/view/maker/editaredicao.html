@@ -1,0 +1,53 @@
+{if $logado}
+Aeee, tá logado:
+
+<a href="{$siteURL}maker/">Voltar</a>
+
+<h1>Editando edicao #{$edicao.numero}:</h1>
+
+<form method="post">
+Numero: <input type="text" name="numero" value="{$edicao.numero}" /><br>
+Mes: <input type="text" name="dtlanc" value="{$edicao.dtlanc}" /><br>
+Lancada: <input type="checkbox" name="lancada" value="1" {if $edicao.lancada}checked{/if} /><br>
+Titulo: <input type="text" name="titulo" value="{$edicao.titulo}" /><br>
+Descricao: <textarea name="descricao">{$edicao.descricao}</textarea><br>
+Pasta: <input type="text" name="folder" value="{$edicao.folder}" /> (sempre terminar com barra. ex: 2013/janeiro/<br>
+Arquivo download: <input type="text" name="numero" value="{$edicao.file}" /> (não colocar extensão. o nome dos CBR e PDF devem ser o mesmo)<br>
+Data encerramento votação: <input type="text" name="numero" value="{$edicao.dtencerr}" /> (o formato DEVE ser: aaaa-mm-dd 00:00:00, ex: 2013-12-31 00:00:00)<br>
+</form>
+
+<h2>Paginas cadastradas</h2>
+<table border="1">
+	<tr>
+		<th>Numero</th>
+		<th>Mes</th>
+		<th>Lancada</th>
+		<th>Titulo</th>
+		<th>Pasta</th>
+		<th>Arquivo download</th>
+		<th>Data encerr. votacao</th>
+		<th>-</th>
+	</tr>
+	{foreach $paginas as $pagina}
+	<tr>
+		<td>{$edicao.numero}</td>
+		<td>{$edicao.dtlanc}</td>
+		<td>{$edicao.lancada}</td>
+		<td>{$edicao.titulo}</td>
+		<td>{$edicao.folder}</td>
+		<td>{$edicao.file}</td>
+		<td>{$edicao.dtencerr}</td>
+		<td><a href="{$siteURL}maker/editaredicao?id={$edicao.id}">Editar</a></td>
+	</tr>
+	{/foreach}
+</table>
+
+{else}
+	{if $chega}
+	Chega... já tentou muito por hoje.
+	{else}
+	<form method="post">
+	Qual é a senha? <input type="text" value="" name="ieourmk" /> <input type="submit" value="Vai!" />
+	</form>
+	{/if}
+{/if}

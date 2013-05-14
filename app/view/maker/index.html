@@ -1,0 +1,39 @@
+{if $logado}
+Aeee, tá logado:
+
+<h1>Edições cadastradas:</h1>
+<a href="{$siteURL}maker/adicionaredicao">Adicionar edicao</a>
+<table border="1">
+	<tr>
+		<th>Numero</th>
+		<th>Mes</th>
+		<th>Lancada</th>
+		<th>Titulo</th>
+		<th>Pasta</th>
+		<th>Arquivo download</th>
+		<th>Data encerr. votacao</th>
+		<th>-</th>
+	</tr>
+	{foreach $edicoes as $edicao}
+	<tr>
+		<td>{$edicao.numero}</td>
+		<td>{$edicao.dtlanc}</td>
+		<td>{$edicao.lancada}</td>
+		<td>{$edicao.titulo}</td>
+		<td>{$edicao.folder}</td>
+		<td>{$edicao.file}</td>
+		<td>{$edicao.dtencerr}</td>
+		<td><a href="{$siteURL}maker/editaredicao?id={$edicao.id}">Editar</a></td>
+	</tr>
+	{/foreach}
+</table>
+
+{else}
+	{if $chega}
+	Chega... já tentou muito por hoje.
+	{else}
+	<form method="post">
+	Qual é a senha? <input type="password" value="" name="ieourmk" /> <input type="submit" value="Vai!" />
+	</form>
+	{/if}
+{/if}

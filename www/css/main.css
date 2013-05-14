@@ -1,0 +1,989 @@
+html,
+body {
+  font-family: 'Coming Soon', cursive, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-background2.jpg') repeat -40px -50px #dfcb93;
+}
+a {
+  color: #ca0404;
+  text-decoration: none;
+}
+a:visited {
+  color: #890303;
+}
+a:hover,
+a:focus {
+  color: #980303;
+  text-shadow: 0 0 5px #fd9d9d;
+}
+#cn-container {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+}
+#cn-container .cn-copyleft {
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  width: 150px;
+  line-height: 10px;
+  text-align: center;
+}
+#cn-container .cn-copyleft hr {
+  display: none;
+}
+#cn-container .cn-copyleft small {
+  color: #666666;
+  color: rgba(0,0,0,0.7);
+  font-size: 10px;
+}
+#cn-container .cn-panel {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 290px;
+  min-height: 510px;
+  padding: 0;
+  background: #fff;
+  background: rgba(255,255,255,0.5);
+  background: url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-leitor-bg.png') no-repeat 0 0;
+  background-size: 100% 100%;
+  color: #222;
+  text-transform: uppercase;
+  z-index: 1001;
+}
+#cn-container .cn-panel .cn-panel-inner {
+  padding: 15px;
+  padding-left: 10px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  background: url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-leitor-bg2.png') no-repeat 0 0;
+}
+#cn-container .cn-panel h1 {
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+  color: #ffffff;
+  text-align: center;
+}
+#cn-container .cn-panel h1 small {
+  font-size: 0.8em;
+  color: #800707;
+}
+#cn-container .cn-panel #cn-edition-pagechoicer,
+#cn-container .cn-panel #cn-edition-chapters {
+  font-size: 16px;
+  padding: 5px 0;
+  display: block;
+  text-align: center;
+  background: rgba(0,0,0,0.1);
+  margin: 4px 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#cn-container .cn-panel #cn-edition-pagechoicer .tooltip .tooltip-inner,
+#cn-container .cn-panel #cn-edition-chapters .tooltip .tooltip-inner {
+  height: auto !important;
+  max-height: none;
+  white-space: nowrap !important;
+  max-width: 400px;
+  text-align: left;
+}
+#cn-container .cn-panel #cn-edition-pagechoicer {
+  font-size: 26px;
+  margin-top: 25px;
+  background: none;
+}
+#cn-container .cn-panel #cn-logged {
+  border-top: 1px solid #ddd;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+#cn-container .cn-panel #cn-edition-chapters {
+  height: auto;
+}
+#cn-container .cn-panel #cn-edition-chapters .label {
+  display: block;
+}
+#cn-container .cn-panel #cn-edition-vote {
+  font-size: 12px;
+  color: #666;
+}
+#cn-container .cn-panel #cn-edition-vote .vote-loading {
+  overflow: hidden;
+  width: 48px;
+  margin: 0 auto;
+  display: block;
+  text-indent: -9999px;
+  height: 0;
+  background: url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-loading.gif') no-repeat 50% 50%;
+  -webkit-transition: height 0.2s ease;
+  -moz-transition: height 0.2s ease;
+  transition: height 0.2s ease;
+}
+#cn-container .cn-panel #cn-edition-vote .vote-loading.showing {
+  height: 48px;
+}
+#cn-container .cn-panel #cn-edition-vote .error {
+  display: block;
+  clear: both;
+}
+#cn-container .cn-panel #cn-edition-vote .vote {
+  width: 200px;
+  margin: 0 auto;
+}
+#cn-container .cn-panel #cn-edition-vote .vote ul,
+#cn-container .cn-panel #cn-edition-vote .vote li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+#cn-container .cn-panel #cn-edition-vote .vote li {
+  float: left;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-label {
+  display: block;
+  clear: both;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star {
+  width: 40px;
+  height: 33px;
+  overflow: hidden;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star a {
+  width: 40px;
+  height: 33px;
+  overflow: hidden;
+  text-indent: -9999px;
+  display: block;
+  background: url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-leitor-stars.png') no-repeat 0 0;
+  -webkit-transition: background-position 0.2s ease-in-out;
+  -moz-transition: background-position 0.2s ease-in-out;
+  transition: background-position 0.2s ease-in-out;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.vote-1 a {
+  background-position: 0px 0;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.vote-1 a:hover {
+  background-position: 0px -33px;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.vote-2 a {
+  background-position: -40px 0;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.vote-2 a:hover {
+  background-position: -40px -33px;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.vote-3 a {
+  background-position: -80px 0;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.vote-3 a:hover {
+  background-position: -80px -33px;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.vote-4 a {
+  background-position: -120px 0;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.vote-4 a:hover {
+  background-position: -120px -33px;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.vote-5 a {
+  background-position: -160px 0;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.vote-5 a:hover {
+  background-position: -160px -33px;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.active.vote-1 a {
+  background-position: 0px -33px;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.active.vote-2 a {
+  background-position: -40px -33px;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.active.vote-3 a {
+  background-position: -80px -33px;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.active.vote-4 a {
+  background-position: -120px -33px;
+}
+#cn-container .cn-panel #cn-edition-vote .vote .vote-star.active.vote-5 a {
+  background-position: -160px -33px;
+}
+#cn-container .cn-panel #cn-edition-vote .error {
+  font-size: 11px;
+  color: #999999;
+}
+#cn-container .cn-panel .cn-options {
+  padding: 0;
+  margin: 0;
+  margin-top: 10px;
+  font-family: 'Coming Soon', cursive, sans-serif;
+  text-transform: uppercase;
+}
+#cn-container .cn-panel .cn-options li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+#cn-container .cn-panel .cn-options li a {
+  display: block;
+  margin: 2px;
+  padding: 1px 6px;
+  font-size: 12px;
+  text-decoration: none;
+  color: #000;
+  -webkit-transition: ease all 0.2s;
+  -moz-transition: ease all 0.2s;
+  transition: ease all 0.2s;
+}
+#cn-container .cn-panel .cn-options li a small {
+  float: right;
+  color: #bbb;
+  font-size: 12px;
+}
+#cn-container .cn-panel .cn-options li a:hover {
+  color: #aa0a0a;
+  padding-left: 10px;
+}
+#cn-container .cn-handlers #cn-edition-prev,
+#cn-container .cn-handlers #cn-edition-next {
+  position: absolute;
+  display: block;
+  top: 50%;
+  text-decoration: none;
+  font-size: 80px;
+  line-height: 80px;
+  margin-top: -45px;
+  padding: 10px;
+  color: #000;
+}
+#cn-container .cn-handlers #cn-edition-prev {
+  right: 0;
+  margin-right: 10px;
+  margin-top: -120px;
+}
+#cn-container .cn-handlers #cn-edition-next {
+  right: 0;
+  margin-right: 10px;
+  margin-top: 40px;
+}
+#cn-edition {
+  position: relative;
+  overflow: hidden;
+}
+#cn-edition .page {
+  width: 50%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  font-size: 18px;
+  overflow: hidden;
+  -webkit-transition: translate3d(0,0,0);
+  -webkit-backface-visibility: hidden;
+  background: #eeeeee url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-loading.gif') no-repeat 50% 50%;
+}
+#cn-edition .page.page-right {
+  left: 50%;
+}
+#cn-edition .page.blank {
+  background: none !important;
+}
+#cn-edition .page .page-shadow {
+  position: absolute;
+  height: 100%;
+  width: 40px;
+  top: 0;
+}
+#cn-edition .page.page-left .page-shadow {
+  box-shadow: inset -70px 0 60px -70px rgba(255,255,255,0.2), inset -60px 0 30px -70px rgba(0,0,0,0.2);
+  right: 0;
+}
+#cn-edition .page.page-right .page-shadow {
+  box-shadow: inset 60px 0 60px -70px rgba(0,0,0,0.2);
+  left: 0;
+}
+#cn-edition .page .divimg {
+  position: absolute;
+  top: 0;
+}
+#cn-edition .html {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1240px;
+  height: 1754px;
+  -webkit-transform-origin: 0 0;
+  -moz-transform-origin: 0 0;
+  transform-origin: 0 0;
+}
+#cn-edition .pl2 .divimg,
+#cn-edition .pr1 .divimg {
+  left: 0;
+}
+#cn-edition .pr2 .divimg,
+#cn-edition .pl1 .divimg {
+  right: 0;
+}
+#cn-edition .pl0,
+#cn-edition .pr0 {
+  z-index: 10 !important;
+}
+#cn-edition .pl1,
+#cn-edition .pr1 {
+  z-index: 20 !important;
+}
+#cn-edition .pl2,
+#cn-edition .pr2 {
+  z-index: 30 !important;
+}
+#cn-edition .cn-2013-1-editorial {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 480px;
+  padding: 30px;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+  color: #000000;
+  margin: 40px;
+  font-family: Arial, sans-serif;
+  font-size: 25px;
+}
+#cn-edition .cn-2013-1-editorial h1 {
+  font-size: 50px;
+}
+#cn-edition .cn-2013-1-editorial .author {
+  margin-top: 40px;
+  text-align: right;
+}
+#cn-edition .cn-2013-1-editorial .author strong {
+  display: block;
+}
+#cn-edition .cn-2013-1-expediente {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 520px;
+  padding: 30px;
+  background: rgba(255,255,255,0.8);
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.3);
+  color: #000000;
+  margin: 30px 40px;
+  font-family: Arial, sans-serif;
+  font-size: 20px;
+}
+#cn-edition .cn-2013-1-expediente h1 {
+  font-size: 40px;
+  margin-top: 10px;
+}
+#cn-edition .cn-2013-1-expediente .columns2 {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  -moz-column-gap: 40px;
+  -webkit-column-gap: 40px;
+  column-gap: 40px;
+}
+#cn-edition .cn-2013-1-expediente .columns2 strong {
+  display: block;
+}
+#cn-edition .cn-2013-1-expediente .columns2 p {
+  margin-top: 0;
+}
+#cn-edition .cn-2013-1-indice {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1020px;
+  padding: 60px;
+  font-size: 35px;
+  color: #fff;
+  text-align: right;
+}
+#cn-edition .cn-2013-1-indice h1 {
+  margin-top: 0;
+}
+#cn-edition .cn-2013-1-indice ul,
+#cn-edition .cn-2013-1-indice li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#cn-edition .cn-2013-1-indice li a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  padding: 5px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-transition: ease all 0.2s;
+  -moz-transition: ease all 0.2s;
+  transition: ease all 0.2s;
+}
+#cn-edition .cn-2013-1-indice li a strong {
+  font-size: 1.2em;
+}
+#cn-edition .cn-2013-1-indice li a span {
+  color: #f77b7b;
+}
+#cn-edition .cn-2013-1-indice li a:hover {
+  background: #000;
+  background: rgba(0,0,0,0.5);
+  padding-right: 30px;
+}
+#cn-edition .cn-2013-2-expediente {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 720px;
+  padding: 30px;
+  background: rgba(0,0,0,0.8);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+}
+#cn-edition .cn-2013-2-expediente strong,
+#cn-edition .cn-2013-2-expediente b {
+  color: #bfbfbf;
+}
+#cn-edition .cn-2013-2-expediente h1 {
+  font-size: 50px;
+  margin-top: 10px;
+  color: #cc46dc;
+}
+#cn-edition .cn-2013-2-expediente .columns2 {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  -moz-column-gap: 40px;
+  -webkit-column-gap: 40px;
+  column-gap: 40px;
+}
+#cn-edition .cn-2013-2-expediente .columns2 strong {
+  display: block;
+}
+#cn-edition .cn-2013-2-expediente .columns2 p {
+  margin-top: 0;
+}
+#cn-edition .cn-2013-2-avisos {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 720px;
+  padding: 30px;
+  background: rgba(0,0,0,0.8);
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+}
+#cn-edition .cn-2013-2-avisos strong,
+#cn-edition .cn-2013-2-avisos b {
+  color: #bfbfbf;
+}
+#cn-edition .cn-2013-2-avisos h1 {
+  font-size: 50px;
+  margin-top: 10px;
+  color: #cc46dc;
+}
+#cn-edition .cn-2013-2-avisos .columns2 {
+  -moz-column-count: 2;
+  -webkit-column-count: 2;
+  column-count: 2;
+  -moz-column-gap: 40px;
+  -webkit-column-gap: 40px;
+  column-gap: 40px;
+}
+#cn-edition .cn-2013-2-avisos .columns2 strong {
+  display: block;
+}
+#cn-edition .cn-2013-2-avisos .columns2 p {
+  margin-top: 0;
+}
+#cn-edition-wrapper {
+  overflow: hidden;
+  margin: 0 auto;
+  margin-left: 290px;
+}
+#login-form-modal {
+  font-size: 12px;
+  font-family: Tahoma, false;
+}
+#login-form-modal .modal-body {
+  padding-top: 0;
+}
+#login-form-modal #login-form-loading {
+  background: url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-loading2.gif') no-repeat 0 50%;
+  padding-left: 20px;
+}
+#login-form-modal input {
+  width: 95%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 6px;
+  font-family: 'Coming Soon', cursive, sans-serif;
+  font-size: 14px;
+  border: 0;
+  background: #eee;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+#login-form-modal .rside {
+  text-align: center;
+  color: #555;
+  background: #f2f2f2;
+  border-left: 1px solid #eee;
+}
+#login-form-modal .btn {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  padding: 4px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  color: #333333;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.75);
+  text-decoration: none;
+  background-color: #f5f5f5;
+  background-image: -moz-linear-gradient(top,#ffffff,#e6e6e6);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#ffffff),to(#e6e6e6));
+  background-image: -webkit-linear-gradient(top,#ffffff,#e6e6e6);
+  background-image: -o-linear-gradient(top,#ffffff,#e6e6e6);
+  background-image: linear-gradient(to bottom,#ffffff,#e6e6e6);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffffff',endColorstr='#ffe6e6e6',GradientType=0);
+  border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  *background-color: #e6e6e6;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+  border: 1px solid #bbbbbb;
+  *border: 0;
+  border-bottom-color: #a2a2a2;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  *margin-left: .3em;
+  -webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
+  -moz-box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 1px 2px rgba(0,0,0,0.05);
+}
+#login-form-modal .btn:hover,
+#login-form-modal .btn:active,
+#login-form-modal .btn.active,
+#login-form-modal .btn.disabled,
+#login-form-modal .btn[disabled] {
+  color: #333333;
+  background-color: #e6e6e6;
+  *background-color: #d9d9d9;
+}
+#login-form-modal .btn:active,
+#login-form-modal .btn.active {
+  background-color: #cccccc \9;
+}
+#login-form-modal .btn:first-child {
+  *margin-left: 0;
+}
+#login-form-modal .btn:hover {
+  color: #333333;
+  text-decoration: none;
+  background-position: 0 -15px;
+  -webkit-transition: background-position 0.1s linear;
+  -moz-transition: background-position 0.1s linear;
+  -o-transition: background-position 0.1s linear;
+  transition: background-position 0.1s linear;
+}
+#login-form-modal .btn:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+#login-form-modal .btn.active,
+#login-form-modal .btn:active {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
+  -moz-box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.15), 0 1px 2px rgba(0,0,0,0.05);
+}
+#login-form-modal .btn.disabled,
+#login-form-modal .btn[disabled] {
+  cursor: default;
+  background-image: none;
+  opacity: 0.65;
+  filter: alpha(opacity=65);
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+#login-form-modal .btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+#login-form-modal .btn-large {
+  padding: 8px 12px;
+  font-size: 14.5px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  border-radius: 6px;
+}
+#login-form-modal .btn-primary {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  background-color: #aa0a0a;
+  background-image: -moz-linear-gradient(top,#aa0a0a,#930a0a);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#aa0a0a),to(#930a0a));
+  background-image: -webkit-linear-gradient(top,#aa0a0a,#930a0a);
+  background-image: -o-linear-gradient(top,#aa0a0a,#930a0a);
+  background-image: linear-gradient(to bottom,#aa0a0a,#930a0a);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffaa0a0a',endColorstr='#ff930a0a',GradientType=0);
+  border-color: #930a0a;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  *background-color: #930a0a;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+#login-form-modal .btn-primary:hover,
+#login-form-modal .btn-primary:active,
+#login-form-modal .btn-primary.active,
+#login-form-modal .btn-primary.disabled,
+#login-form-modal .btn-primary[disabled] {
+  color: #ffffff;
+  background-color: #930a0a;
+}
+#login-form-modal .btn-facebook {
+  color: #ffffff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  background-color: #343c9b;
+  background-image: -moz-linear-gradient(top,#343c9b,#293082);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#343c9b),to(#293082));
+  background-image: -webkit-linear-gradient(top,#343c9b,#293082);
+  background-image: -o-linear-gradient(top,#343c9b,#293082);
+  background-image: linear-gradient(to bottom,#343c9b,#293082);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff343c9b',endColorstr='#ff293082',GradientType=0);
+  border-color: #293082;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+  *background-color: #293082;
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+#login-form-modal .btn-facebook:hover,
+#login-form-modal .btn-facebook:active,
+#login-form-modal .btn-facebook.active,
+#login-form-modal .btn-facebook.disabled,
+#login-form-modal .btn-facebook[disabled] {
+  color: #ffffff;
+  background-color: #293082;
+}
+.cn-header {
+  background: #ba0808 url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/bg-cn.jpg') 50% 50%;
+}
+.cn-header hgroup h1 {
+  margin: 0;
+  padding: 0;
+}
+.cn-header hgroup h1 a {
+  width: 347px;
+  height: 147px;
+  display: block;
+  background: url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-conexaonan.png') no-repeat 0 0;
+  overflow: hidden;
+  text-indent: -99999px;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+.cn-header hgroup h2 {
+  display: none;
+}
+.cn-header .cn-headerbg {
+  background-repeat: no-repeat;
+  background-position: 100% 0;
+  height: 150px;
+}
+.cn-header .cn-headerbg.cn-headerbg1 {
+  background-image: url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-header1.png');
+}
+.cn-header .cn-menu {
+  background: #7a000a;
+  height: 40px;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
+}
+.cn-header .cn-menu ul,
+.cn-header .cn-menu li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cn-header .cn-menu li {
+  float: left;
+}
+.cn-header .cn-menu a {
+  color: #f8e516;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
+  -webkit-transition: all ease 0.2s;
+  -moz-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+}
+.cn-header .cn-menu a:hover {
+  -webkit-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -o-transform: scale(1.2);
+  transform: scale(1.2);
+  color: #fcf476;
+}
+.cn-404 {
+  font-size: 20px;
+  width: 800px;
+  margin: 30px auto;
+}
+.cn-404 .cn-404-title {
+  float: right;
+  width: 540px;
+}
+.cn-404 .cn-404-title h1,
+.cn-404 .cn-404-title h2 {
+  line-height: 1em;
+  text-transform: uppercase;
+}
+.cn-404 .cn-404-title h1 {
+  font-size: 80px;
+  margin-top: 30px;
+  margin-bottom: -20px;
+  color: #ca0404;
+  text-shadow: 4px 4px 0px rgba(0,0,0,0.2);
+}
+.cn-404 .cn-404-title h2 {
+  font-size: 48px;
+}
+.cn-404 img {
+  float: left;
+  width: 240px;
+  margin-right: 20px;
+}
+.cn-404 p {
+  clear: right;
+}
+.cn-container {
+  padding: 15px;
+  margin: 10px 6px;
+  background: url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-background.jpg') repeat -40px -50px #f5eacb;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -o-border-radius: 8px;
+  -ms-border-radius: 8px;
+  border-radius: 8px;
+}
+.breadcrumb {
+  background: none;
+  font-size: 13px;
+  margin-bottom: -10px;
+}
+.breadcrumb li {
+  text-shadow: none;
+}
+.breadcrumb li.active {
+  color: #7b6528;
+}
+.breadcrumb li .divider {
+  color: #a89152;
+}
+.cn-serie h1 {
+  margin-top: 5px;
+  margin-bottom: 0;
+}
+.cn-serie h2 {
+  margin-top: 0;
+  font-size: 1em;
+  font-weight: normal;
+}
+.cn-series,
+.cn-series li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.cn-series li {
+  float: left;
+  width: 210px;
+  padding: 10px;
+  height: 350px;
+}
+.cn-series img {
+  width: 160px;
+  display: block;
+}
+.cn-series .cn-author,
+.cn-series .cn-capitulos {
+  font-size: 12px;
+}
+.cn-series .cn-capitulos {
+  margin-top: 6px;
+}
+.cn-rating {
+  width: 100px;
+}
+.cn-rating,
+.cn-rating .cn-rating-inner {
+  height: 16px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-leitor-stars-mini.png');
+  display: block;
+  overflow: hidden;
+  text-indent: -9999px;
+}
+.cn-rating .cn-rating-inner {
+  background-position: 0 -17px;
+  width: 0;
+}
+h1 .cn-rating {
+  display: inline-block;
+}
+.cn-footer {
+  background: #373e16 url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-bottom-bg.jpg') repeat 0 0;
+  color: #82b31c;
+}
+.cn-footer .container {
+  padding: 20px 0;
+}
+.cn-footer h3 {
+  margin: 0;
+  margin-bottom: 15px;
+}
+.cn-footer ul {
+  margin: 10px 0;
+  padding-left: 15px;
+  font-size: 13px;
+}
+.cn-footer .cn-copyleft {
+  font-size: 11px;
+  text-align: right;
+}
+.cn-footer .cn-copyleft img {
+  margin-bottom: 5px;
+}
+.cn-footer a {
+  color: #9aed23;
+}
+.cn-footer a:hover,
+.cn-footer a:focus {
+  color: #ffffff;
+  text-shadow: none;
+}
+@media (min-width: 1200px) {
+  .cn-404 {
+    font-size: 22px;
+    width: 1000px;
+    margin: 60px auto;
+  }
+  .cn-404 .cn-404-title {
+    width: 740px;
+  }
+}
+@media (min-width: 768px) and (max-width: 979px) {
+  .cn-404 {
+    font-size: 18px;
+    width: 700px;
+    margin: 20px auto;
+  }
+  .cn-404 .cn-404-title {
+    width: 440px;
+  }
+}
+@media (max-width: 767px) {
+  .cn-404 {
+    font-size: 18px;
+    width: auto;
+    margin: 20px;
+    text-align: center;
+  }
+  .cn-404 .cn-404-title {
+    width: auto;
+    float: none;
+  }
+  .cn-404 img {
+    width: 160px;
+    float: none;
+  }
+}
+@media (max-width: 480px) {
+  .cn-header hgroup h1 a {
+    width: 208px;
+    height: 88px;
+    background: url('http://localhost/nanquim/site/nanquim-git/conexaonanquim/images/layout/cn-conexaonan-mini.png') no-repeat 0 0;
+    overflow: hidden;
+    text-indent: -99999px;
+    margin: 5px auto;
+  }
+  .cn-header .cn-headerbg {
+    height: auto;
+  }
+  .cn-header .cn-menu {
+    height: auto;
+    font-size: 18px;
+  }
+  .cn-header .cn-menu li {
+    float: none;
+  }
+  .cn-header .cn-menu a {
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+  }
+  .cn-404 {
+    font-size: 16px;
+    width: auto;
+    margin: 15px;
+    text-align: center;
+  }
+  .cn-404 .cn-404-title {
+    width: auto;
+    float: none;
+  }
+  .cn-404 .cn-404-title h1 {
+    font-size: 50px;
+  }
+  .cn-404 .cn-404-title h2 {
+    font-size: 30px;
+  }
+  .cn-404 img {
+    width: 150px;
+    float: none;
+  }
+  .cn-series li {
+    float: none;
+    width: auto;
+    height: auto;
+    border-bottom: 1px solid #A89152;
+  }
+  .cn-series img {
+    width: 60px;
+    float: right;
+    margin-left: 6px;
+  }
+  .cn-footer {
+    text-align: center;
+  }
+  .cn-footer .cn-copyleft {
+    padding: 20px 20px 0;
+    margin-top: 20px;
+    border-top: 1px solid #546112;
+    text-align: center;
+  }
+}

@@ -6,3 +6,6 @@ extras/documentation
 
 /nbproject/private/
 config
+/plugins/smarty/templates_c/
+/plugins/smarty/cache/
+/plugins/min/cache/
